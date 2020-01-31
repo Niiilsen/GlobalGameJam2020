@@ -1,0 +1,110 @@
+# ============ #
+# GlobalGameJam2020    #
+# ============ #
+
+GlobalGameJam2020/Assets/ProjectSettings/
+GlobalGameJam2020/Assets/Plugins/AssetUsageDetector/
+GlobalGameJam2020/Assets/Plugins/AssetUsageDetector.meta
+GlobalGameJam2020/Assets/Plugins/RuntimeInspector/
+GlobalGameJam2020/Assets/Plugins/RuntimeInspector.meta
+GlobalGameJam2020/Assets/-tk2d.asset
+GlobalGameJam2020/Assets/-tk2d.asset.meta
+GlobalGameJam2020/Assets/Resources/tk2d/*
+GlobalGameJam2020/Assets/.reuniter_data
+GlobalGameJam2020/Assets/StreamingAssets*
+GlobalGameJam2020/statistics/
+GlobalGameJam2020/PlaygroundCache/
+GlobalGameJam2020/RewiredBackup/
+GlobalGameJam2020/AssetBundles/
+GlobalGameJam2020/MoonBuildCache/
+GlobalGameJam2020/dofs_log.txt
+GlobalGameJam2020/RegisterIcalls.cpp
+GlobalGameJam2020/.idea
+GlobalGameJam2020/ShaderVariantCache/
+release/
+Builds/
+Steam/
+
+GlobalGameJam2020/Assets/OweTempShaders.meta
+GlobalGameJam2020/Assets/OweTempShaders/*
+
+# ============ #
+# Switch       #
+# ============ #
+GlobalGameJam2020/SwitchIL2CPPCache/
+GlobalGameJam2020/SwitchIL2CPPStats/
+
+# ============ #
+# FMOD         #
+# ============ #
+GlobalGameJam2020/Assets/FMODStudioCache.asset
+GlobalGameJam2020/Assets/FMODStudioCache.asset.meta
+GlobalGameJam2020/Assets/StreamingAssets/*.bank
+GlobalGameJam2020/fmod.log
+GlobalGameJam2020/fmod_editor.log
+
+GlobalGameJam2020/FMOD/**/.user
+GlobalGameJam2020/FMOD/**/.unsaved
+GlobalGameJam2020/FMOD/**/.cache
+GlobalGameJam2020/FMOD/**/.restore
+
+# ============ #
+# Maya         #
+# ============ #
+GlobalGameJam2020/Assets/**/.mayaSwatches/*
+
+
+# ============ #
+# POLYBRUSH    #
+# ============ #
+
+GlobalGameJam2020/**/Polybrush/Brush Settings/
+GlobalGameJam2020/**/Polybrush/Brush Settings.meta
+GlobalGameJam2020/**/Polybrush/Color Palettes/
+GlobalGameJam2020/**/Polybrush/Color Palettes.meta
+GlobalGameJam2020/**/Polybrush/Prefab Palettes/
+GlobalGameJam2020/**/Polybrush/Prefab Palettes.meta
+GlobalGameJam2020/**/Polybrush/Settings.asset
+GlobalGameJam2020/**/Polybrush/Settings.asset.meta
+
+
+# =============== #
+# Unity generated #
+# =============== #
+GlobalGameJam2020/Temp/
+GlobalGameJam2020/Obj/
+GlobalGameJam2020/UnityGenerated/
+GlobalGameJam2020/Library/
+GlobalGameJam2020/Assets/AssetStoreTools*
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+GlobalGameJam2020/ExportedObj/
+/GlobalGameJam2020/.vs/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+#Icon?
+ehthumbs.db
+Thumbs.db
+
+
+# ============ #
+# Extra #
+# ============ #
