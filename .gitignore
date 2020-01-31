@@ -43,10 +43,10 @@ GlobalGameJam2020/Assets/StreamingAssets/*.bank
 GlobalGameJam2020/fmod.log
 GlobalGameJam2020/fmod_editor.log
 
-GlobalGameJam2020/FMOD/**/.user
-GlobalGameJam2020/FMOD/**/.unsaved
-GlobalGameJam2020/FMOD/**/.cache
-GlobalGameJam2020/FMOD/**/.restore
+GlobalGameJam2020/Assets/FMOD_GGJ2020/**/.user
+GlobalGameJam2020/Assets/FMOD_GGJ2020/**/.unsaved
+GlobalGameJam2020/Assets/FMOD_GGJ2020/**/.cache
+GlobalGameJam2020/Assets/FMOD_GGJ2020/**/.restore
 
 # ============ #
 # Maya         #
