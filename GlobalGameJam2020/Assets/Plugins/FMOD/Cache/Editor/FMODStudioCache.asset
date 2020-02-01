@@ -14,11 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD_GGJ2020/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637160736114504184
+  lastModified: 637161492687486514
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 672
+  Exists: 1
+--- !u!114 &-4419537783493372643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD_GGJ2020/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637161492687483214
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -34,14 +52,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -5991517449408198202}
-  - {fileID: 267704778123329557}
+  - {fileID: -4419537783493372643}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 267704778123329557}
+  - {fileID: -4419537783493372643}
   StringsBanks:
   - {fileID: -5991517449408198202}
-  stringsBankWriteTime: 637160736114504184
+  stringsBankWriteTime: 637161492687486514
   cacheVersion: 3
 --- !u!114 &267704778123329557
 MonoBehaviour:
@@ -60,4 +78,4 @@ MonoBehaviour:
   lastModified: 637160736114424388
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
