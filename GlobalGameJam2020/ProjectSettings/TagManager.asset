@@ -13,13 +13,8 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
   - Items
   - Machines
-=======
-  - PostProcessing
-  - PortalParticle
->>>>>>> ec994a403882507c1953974228b52a8e41923fcd
   - 
   - 
   - 
@@ -45,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI
-    uniqueID: 2154198877
     locked: 0
