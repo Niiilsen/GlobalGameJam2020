@@ -12,6 +12,8 @@ GlobalGameJam2020/Assets/-tk2d.asset.meta
 GlobalGameJam2020/Assets/Resources/tk2d/*
 GlobalGameJam2020/Assets/.reuniter_data
 GlobalGameJam2020/Assets/StreamingAssets*
+GlobalGameJam2020/Assets/Rewired/
+GlobalGameJam2020/Assets/Rewired.meta
 GlobalGameJam2020/statistics/
 GlobalGameJam2020/PlaygroundCache/
 GlobalGameJam2020/RewiredBackup/
@@ -108,3 +110,4 @@ Thumbs.db
 # ============ #
 # Extra #
 # ============ #
+*.dll
