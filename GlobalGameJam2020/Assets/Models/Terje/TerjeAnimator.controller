@@ -32,7 +32,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Animator Controller
+  m_Name: TerjeAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Blend
@@ -134,7 +134,7 @@ BlendTree:
   m_MaxThreshold: 1.8082192
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
-  m_BlendType: 2
+  m_BlendType: 0
 --- !u!1107 &8866171632054513754
 AnimatorStateMachine:
   serializedVersion: 5
