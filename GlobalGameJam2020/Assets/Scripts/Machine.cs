@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class Machine : MonoBehaviour {
+    public Transform canvas;
+    public GameObject iconPrefab;
+
+    public List<ScrapInfo> missingPieces;
+    private Transform[] currentPieces;
+    public List<Transform> anchorPoints;
+
+    void Start() {
+        for(int i = 0; i < missingPieces.Count; i++) {
+            Image icon = Instantiate(iconPrefab, canvas).GetComponent<Image>();
+            icon.sprite = missingPieces[i].image;
+
+            //TEMP
+            if(missingPieces[i].scrapType == ScrapType.Red) {
+                icon.color = Color.red;
+            }else if(missingPieces[i].scrapType == ScrapType.Blue) {
+                icon.color = Color.blue;
+            } else if(missingPieces[i].scrapType == ScrapType.Green) {
+                icon.color = Color.green;
+            } else if(missingPieces[i].scrapType == ScrapType.Yellow) {
+                icon.color = Color.yellow;
+            }
+        }
+
+        currentPieces = new Transform[missingPieces.Count];
+    }
+
+    public bool Use(Item item) {
+        for(int i = 0; i < missingPieces.Count; i++) {
+            if(missingPieces[i].scrapType == item.scrapType) {
+                item.transform.parent = transform;
+                item.transform.position = anchorPoints[i].position;
+                item.transform.rotation = anchorPoints[i].rotation;
+
+                currentPieces[i] = item.transform;
+
+                Transform icon = canvas.GetChild(i);
+                icon.GetChild(0).gameObject.SetActive(true);
+                icon.GetChild(1).gameObject.SetActive(true);
+
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool IsComplete() {
+        bool test = true;
+        foreach(Transform t in currentPieces) {
+            if(t == null) {
+                test = false;
+                break;
+            }
+        }
+
+        return test;
+    }
+}
