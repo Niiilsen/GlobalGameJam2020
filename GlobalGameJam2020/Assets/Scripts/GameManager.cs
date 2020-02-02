@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
     public Sprite redWin;
     public Sprite draw;
 
+    [SerializeField, FMODUnity.EventRef] string redTeamWinsSnd;
+    [SerializeField, FMODUnity.EventRef] string yellowTeamWinsSnd;
+
     private void Awake() {
         if(instance != null) {
             Destroy(gameObject);
@@ -135,12 +138,16 @@ public class GameManager : MonoBehaviour
         {
             winners = (int)Team.Yellow;
             endScreen.sprite = yellowWin;
+            FMODUnity.RuntimeManager.PlayOneShot(yellowTeamWinsSnd);
         } else if (score[(int)Team.Red] > score[(int)Team.Yellow]) {
             winners = (int)Team.Red;
             endScreen.sprite = redWin;
+            FMODUnity.RuntimeManager.PlayOneShot(redTeamWinsSnd);
         } else {
             endScreen.sprite = draw;
         }
+
+        counter.gameObject.SetActive(false);
 
         roundPlaying = false;
         endScreen.gameObject.SetActive(true);
@@ -199,5 +206,10 @@ public class GameManager : MonoBehaviour
         score[(int)team] += (s * combo);
         scoreText[(int)team].SetScore(score[(int)team], combo);
 
+    }
+
+    public void ResetCombo(Team team)
+    {
+        scoreText[(int)team].ResetCombo();
     }
 }

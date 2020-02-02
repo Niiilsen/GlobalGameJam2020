@@ -54,10 +54,10 @@ public class Machine : MonoBehaviour {
                 item.transform.rotation = anchorPoints[i].rotation;
 
                 currentPieces[i] = item.transform;
-
-                Transform icon = canvas.GetChild(i);
-                icon.GetChild(0).gameObject.SetActive(true);
-                icon.GetChild(1).gameObject.SetActive(true);
+ 
+                canvas.GetChild(i).gameObject.SetActive(false);
+                //icon.GetChild(0).gameObject.SetActive(true);
+                //icon.GetChild(1).gameObject.SetActive(true);
 
                 return true;
             }

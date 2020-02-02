@@ -18,11 +18,15 @@ public class ScoreBoard : MonoBehaviour
             Debug.Log("Play Sound");
             FMODUnity.RuntimeManager.PlayOneShot(scoreIncreaseSnd, transform.position);
         }
-        if (combo == 1)
-            comboText.SetText("");
-        else
-            comboText.SetText(combo.ToString() + "x");
+
+        comboText.SetText((combo + 1).ToString() + "x");
         lastScore = score;
 
+    }
+
+    public void ResetCombo()
+    {
+
+        comboText.SetText("");
     }
 }
