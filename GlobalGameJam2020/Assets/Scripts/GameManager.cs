@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour {
     private PlayerCharacterController[] players;
     private Conveyor[] conveyors;
 
+    public Image endScreen;
+    public Sprite yellowWin;
+    public Sprite redWin;
+    public Sprite draw;
+
     private void Awake() {
         if(instance != null) {
             Destroy(gameObject);
@@ -92,11 +97,18 @@ public class GameManager : MonoBehaviour {
         int winners = -1;
         if(score[(int)Team.Yellow] > score[(int)Team.Red]) {
             winners = (int)Team.Yellow;
+            endScreen.sprite = yellowWin;
         } else if (score[(int)Team.Red] > score[(int)Team.Yellow]) {
             winners = (int)Team.Red;
+            endScreen.sprite = redWin;
+        } else {
+            endScreen.sprite = draw;
         }
 
         roundPlaying = false;
+        
+        endScreen.gameObject.SetActive(true);
+
         foreach(PlayerCharacterController player in players) {
             player.Disable();
             player.GetComponent<PlayerInput>().EndGameControls();
