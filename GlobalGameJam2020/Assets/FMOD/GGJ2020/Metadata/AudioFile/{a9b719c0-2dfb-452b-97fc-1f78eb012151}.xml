@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{a9b719c0-2dfb-452b-97fc-1f78eb012151}">
+        <property name="assetPath">
+            <value>LevelPull.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.26400000000000001</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{18cffed7-d03f-4897-9a4e-4cb4949785d9}</destination>
+        </relationship>
+    </object>
+</objects>

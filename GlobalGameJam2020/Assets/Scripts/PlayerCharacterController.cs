@@ -23,7 +23,7 @@ public class PlayerCharacterController : MonoBehaviour {
     public LayerMask itemLayer;
     public LayerMask machineLayer;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
     private Transform tr;
 
     private Item currentItem;
@@ -90,7 +90,7 @@ public class PlayerCharacterController : MonoBehaviour {
             }
         }
 
-        //animator.SetFloat(moveHash, rb.velocity.sqrMagnitude);
+        animator.SetFloat(moveHash, rb.velocity.sqrMagnitude);
     }
 
     void FixedUpdate() {

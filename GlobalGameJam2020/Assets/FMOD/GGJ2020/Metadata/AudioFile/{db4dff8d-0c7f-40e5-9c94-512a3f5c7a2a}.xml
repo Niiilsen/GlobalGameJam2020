@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{db4dff8d-0c7f-40e5-9c94-512a3f5c7a2a}">
+        <property name="assetPath">
+            <value>Nilsen.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>54.883265306122446</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{18cffed7-d03f-4897-9a4e-4cb4949785d9}</destination>
+        </relationship>
+    </object>
+</objects>

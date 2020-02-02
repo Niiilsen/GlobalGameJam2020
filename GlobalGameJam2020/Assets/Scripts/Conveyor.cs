@@ -16,6 +16,8 @@ public class Conveyor : MonoBehaviour {
     public float spawnFrequency;
     public float cutoff;
 
+    public ConveyorBelt conveyorBelt;
+
     void Update() {
         if(moving) {
             Vector3 delta = transform.forward * moveSpeed * Time.deltaTime;
@@ -45,7 +47,10 @@ public class Conveyor : MonoBehaviour {
 
     public void Toggle() {
         moving = !moving;
+        conveyorBelt.ToggleBelt(moving);
     }
+
+    public bool Moving { get{return moving; } }
 
     private void SpawnMachine() {
         Machine machine = Instantiate(machinePrefabs[Random.Range(0, machinePrefabs.Length)], transform.position, transform.rotation, transform).GetComponent<Machine>();

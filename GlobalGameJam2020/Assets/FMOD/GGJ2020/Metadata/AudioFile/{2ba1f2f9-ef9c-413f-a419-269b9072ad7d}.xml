@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{2ba1f2f9-ef9c-413f-a419-269b9072ad7d}">
+        <property name="assetPath">
+            <value>ConveyorBelt.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>24.648</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{18cffed7-d03f-4897-9a4e-4cb4949785d9}</destination>
+        </relationship>
+    </object>
+</objects>

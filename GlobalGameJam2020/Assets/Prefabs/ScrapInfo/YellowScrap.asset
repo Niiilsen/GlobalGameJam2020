@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrapType: 3
   prefab: {fileID: 8321827534038241061, guid: 30d238a8c338aab4ca73f0df192b7cc8, type: 3}
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: f4a79d90598e3154fbc08aee85fd86f7, type: 3}

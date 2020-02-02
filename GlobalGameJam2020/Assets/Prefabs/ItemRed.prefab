@@ -176,6 +176,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skrue_01
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b4c4a2d6bc8937645984285c4cd16e16,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c4a2d6bc8937645984285c4cd16e16, type: 3}
 --- !u!1 &1950407623589600995 stripped

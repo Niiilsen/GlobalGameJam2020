@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03d1ed0f56090344ab00f52219ac11c, type: 3}
   m_Name: RedScrap
   m_EditorClassIdentifier: 
+  scrapType: 0
   prefab: {fileID: 8321827534038241061, guid: 7d28bdf3508a92d45ae705d17e8a3744, type: 3}
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: e470e51f5cc9ecd429c8d9c6c597df22, type: 3}

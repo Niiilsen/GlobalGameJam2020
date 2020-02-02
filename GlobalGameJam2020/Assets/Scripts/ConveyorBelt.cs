@@ -12,9 +12,14 @@ public class ConveyorBelt : MonoBehaviour
     private float currentSpeed = 0;
     private float currentOffset = 0;
 
+    FMODUnity.StudioEventEmitter audioSource;
+    [SerializeField, FMODUnity.EventRef] string conveyorBeltEvent;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<FMODUnity.StudioEventEmitter>();
+        audioSource.Event = conveyorBeltEvent;
     }
 
     // Update is called once per frame
@@ -25,16 +30,25 @@ public class ConveyorBelt : MonoBehaviour
 
     public void ToggleBelt(bool value)
     {
-        targetSpeed = value ? beltSpeed : 0;
+        if (value)
+        {
+            currentSpeed = beltSpeed;
+            audioSource.Play();
+        }
+        else
+        {
+            currentSpeed = 0;
+            audioSource.Stop();
+        }
     }
 
     void UpdateBeltVisuals()
     {
-        targetSpeed = beltSpeed / 100;
-        currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, lerpSpeed * Time.deltaTime);
+        //targetSpeed = beltSpeed / 100;
+        //currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, lerpSpeed * Time.deltaTime);
 
-        currentOffset += currentSpeed;
-        belt.SetTextureOffset("_MainTex", new Vector2(0, currentOffset));
+        currentOffset += currentSpeed * Time.deltaTime;
+        belt.SetFloat("_TrackSpeed", currentOffset);
     }
 }
 
