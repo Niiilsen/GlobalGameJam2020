@@ -42,10 +42,14 @@ public class GameManager : MonoBehaviour
     [SerializeField, FMODUnity.EventRef] string spitSnd;
     private bool anticipating = false;
 
-    private void Awake()
-    {
-        if (instance != null)
-        {
+    
+    public Image endScreen;
+    public Sprite yellowWin;
+    public Sprite redWin;
+    public Sprite draw;
+
+    private void Awake() {
+        if(instance != null) {
             Destroy(gameObject);
         }
         else
@@ -130,15 +134,18 @@ public class GameManager : MonoBehaviour
         if (score[(int)Team.Yellow] > score[(int)Team.Red])
         {
             winners = (int)Team.Yellow;
-        }
-        else if (score[(int)Team.Red] > score[(int)Team.Yellow])
-        {
+            endScreen.sprite = yellowWin;
+        } else if (score[(int)Team.Red] > score[(int)Team.Yellow]) {
             winners = (int)Team.Red;
+            endScreen.sprite = redWin;
+        } else {
+            endScreen.sprite = draw;
         }
 
         roundPlaying = false;
-        foreach (PlayerCharacterController player in players)
-        {
+        endScreen.gameObject.SetActive(true);
+
+        foreach(PlayerCharacterController player in players) {
             player.Disable();
             player.GetComponent<PlayerInput>().EndGameControls();
 

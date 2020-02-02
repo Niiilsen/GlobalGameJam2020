@@ -73,13 +73,13 @@ public class PlayerCharacterController : MonoBehaviour {
             newVelocity.y = rb.velocity.y;
             rb.velocity = newVelocity;
 
-            rb.MoveRotation(Quaternion.LookRotation(Vector3.Lerp(tr.forward, moveVector, rotationSpeedWithItem * Time.fixedDeltaTime), Vector3.up));
+            rb.MoveRotation(Quaternion.LookRotation(Vector3.Slerp(tr.forward, moveVector, rotationSpeedWithItem * Time.fixedDeltaTime), Vector3.up));
         } else {
             Vector3 newVelocity = moveVector * 10f * moveSpeed * Time.fixedDeltaTime + dashVector;
             newVelocity.y = rb.velocity.y;
             rb.velocity = newVelocity;
 
-            rb.MoveRotation(Quaternion.LookRotation(Vector3.Lerp(tr.forward, moveVector, rotationSpeed * Time.fixedDeltaTime), Vector3.up));
+            rb.MoveRotation(Quaternion.LookRotation(Vector3.Slerp(tr.forward, moveVector, rotationSpeed * Time.fixedDeltaTime), Vector3.up));
         }
     }
 
