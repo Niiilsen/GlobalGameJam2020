@@ -185,9 +185,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddScore(Team team)
-    {
-        score[(int)team] += scoreIncrease;
+
+    public void AddScore(Team team, int s) {
+        score[(int)team] += s;
         scoreText[(int)team].SetScore(score[(int)team]);
 
     }
