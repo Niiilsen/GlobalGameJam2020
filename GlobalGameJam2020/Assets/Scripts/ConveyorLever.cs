@@ -8,7 +8,11 @@ public class ConveyorLever : MonoBehaviour {
 
     [SerializeField, FMODUnity.EventRef] string toggleSnd;
 
-    public void Trigger() {
+    public void Trigger(Team t) {
+        if(t != conveyor.team) {
+            return;
+        }
+
         conveyor.Toggle();
 
         animator.SetBool("On", conveyor.Moving);
