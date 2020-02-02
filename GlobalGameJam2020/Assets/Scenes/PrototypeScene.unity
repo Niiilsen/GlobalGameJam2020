@@ -829,7 +829,8 @@ MonoBehaviour:
   machines:
   - {fileID: 1178647731}
   moveSpeed: 2
-  spawnFrequency: 4
+  spawnFrequency: 8
+  spawnFrequencyIncrease: 0.04
   cutoff: 10
 --- !u!4 &180388163
 Transform:
@@ -1038,6 +1039,7 @@ MonoBehaviour:
   - {fileID: 184682420}
   moveSpeed: 2
   spawnFrequency: 4
+  spawnFrequencyIncrease: 0
   cutoff: 10
 --- !u!4 &327311963
 Transform:

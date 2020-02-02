@@ -54,8 +54,11 @@ public class PlayerCharacterController : MonoBehaviour {
             currentItem.PutDown(pickUpPoint.position);
             currentItem = null;
         }
-        animator.SetTrigger("Freeze");
         inputDisabled = true;
+    }
+
+    public void PlayAnim(string anim) {
+        animator.SetTrigger(anim);
     }
 
     public void Move(Vector3 moveVector) {

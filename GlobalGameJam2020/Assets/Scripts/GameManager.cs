@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
     private float gameTimer = 0;
 
     private PlayerCharacterController[] players;
+    private Conveyor[] conveyors;
 
     private void Awake() {
         if(instance != null) {
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         players = GameObject.FindObjectsOfType<PlayerCharacterController>();
+        conveyors = GameObject.FindObjectsOfType<Conveyor>();
+
         score = new float[2];
         timer = 4f;
 
@@ -82,9 +85,29 @@ public class GameManager : MonoBehaviour {
     }
 
     private void EndRound() {
+        int winners = -1;
+        if(score[(int)Team.Yellow] > score[(int)Team.Red]) {
+            winners = (int)Team.Yellow;
+        } else if (score[(int)Team.Red] > score[(int)Team.Yellow]) {
+            winners = (int)Team.Red;
+        }
+
         roundPlaying = false;
         foreach(PlayerCharacterController player in players) {
             player.Disable();
+            player.GetComponent<PlayerInput>().EndGameControls();
+
+            if(winners == -1) {
+                player.PlayAnim("Draw");
+            } else if(player.team == (Team)winners) {
+                player.PlayAnim("Victory");
+            } else if(player.team != (Team)winners) {
+                player.PlayAnim("Defeat");
+             }
+        }
+
+        foreach(Conveyor c in conveyors) {
+            c.EndRound();
         }
     }
 
@@ -93,10 +116,16 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
+        int spawnIndex = 0;
         for(int i = 0; i < spawnQty; i++) {
-            Item obj = Instantiate(scraps[Random.Range(0, scraps.Length)], spawnPoint.position, spawnPoint.rotation).GetComponent<Item>();
+            Vector3 offset = Random.onUnitSphere * 0.5f;
+            //int spawnIndex = Random.Range(0, scraps.Length);
+
+            Item obj = Instantiate(scraps[spawnIndex], spawnPoint.position + offset, spawnPoint.rotation).GetComponent<Item>();
             obj.GetComponent<Rigidbody>().AddForce(Utils.GetPointOnUnitSphereCap(spawnPoint.forward, spread) * spawnForce, ForceMode.Impulse);
             obj.Init();
+
+            spawnIndex = (spawnIndex + 1) % scraps.Length;
         }
     }
 
