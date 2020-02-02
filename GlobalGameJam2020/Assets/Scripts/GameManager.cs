@@ -133,8 +133,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void AddScore(Team team) {
-        score[(int)team]++;
+    public void AddScore(Team team, int s) {
+        score[(int)team] += s;
         scoreText[(int)team].text = score[(int)team].ToString();
 
     }

@@ -17,6 +17,9 @@ public class Conveyor : MonoBehaviour {
     public float spawnFrequencyIncrease = 0.04f;
     public float cutoff;
 
+    public int scoreTwoPieces = 1;
+    public int scoreThreePieces = 2;
+
     void Start() {
         machines.ForEach(m => m.Init(team));
     }
@@ -30,7 +33,7 @@ public class Conveyor : MonoBehaviour {
 
                 if(machines[i].transform.position.z > cutoff) {
                     if(machines[i].IsComplete()) {
-                        GameManager.instance.AddScore(team);
+                        GameManager.instance.AddScore(team, machines[i].missingPieces.Count == 2 ? scoreTwoPieces : scoreThreePieces);
                     } else {
                     }
                     Destroy(machines[i].gameObject);
