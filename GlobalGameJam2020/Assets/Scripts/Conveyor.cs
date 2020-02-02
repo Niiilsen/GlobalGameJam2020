@@ -21,6 +21,12 @@ public class Conveyor : MonoBehaviour {
     public int scoreTwoPieces = 1;
     public int scoreThreePieces = 2;
 
+    int currentCombo = 1;
+
+    public ErrorLight errorLight;
+
+    [SerializeField, FMODUnity.EventRef] string errorSnd;
+
     void Start() {
         machines.ForEach(m => m.Init(team));
     }
@@ -34,8 +40,12 @@ public class Conveyor : MonoBehaviour {
 
                 if(machines[i].transform.position.z > cutoff) {
                     if(machines[i].IsComplete()) {
-                        GameManager.instance.AddScore(team, machines[i].missingPieces.Count == 2 ? scoreTwoPieces : scoreThreePieces);
+                        GameManager.instance.AddScore(team, (machines[i].missingPieces.Count == 2 ? scoreTwoPieces : scoreThreePieces), currentCombo);
+                        currentCombo++;
                     } else {
+                        currentCombo = 1;
+                        FMODUnity.RuntimeManager.PlayOneShot(errorSnd, transform.position);
+                        errorLight.TriggerErrorLight();
                     }
                     Destroy(machines[i].gameObject);
                     machines.RemoveAt(i);

@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         timer = 4f;
 
         gameTimer = roundTime;
-        counter.text = Mathf.FloorToInt(gameTimer).ToString();
+        //counter.text = Mathf.FloorToInt(gameTimer).ToString();
 
         StartCoroutine(GameLoop());
     }
@@ -110,6 +110,8 @@ public class GameManager : MonoBehaviour
 
     private void StartRound()
     {
+
+        counter.text = Mathf.FloorToInt(gameTimer).ToString();
         roundPlaying = true;
         for (int i = 0; i < players.Length; i++)
         {
@@ -186,9 +188,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void AddScore(Team team, int s) {
-        score[(int)team] += s;
-        scoreText[(int)team].SetScore(score[(int)team]);
+    public void AddScore(Team team, int s, int combo) {
+        score[(int)team] += (s * combo);
+        scoreText[(int)team].SetScore(score[(int)team], combo);
 
     }
 }

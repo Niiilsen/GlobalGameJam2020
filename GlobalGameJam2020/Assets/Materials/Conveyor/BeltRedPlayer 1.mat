@@ -71,7 +71,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Thickness: 0.057
-    - _TrackSpeed: 1.1125019
+    - _TrackSpeed: 2.263178
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
