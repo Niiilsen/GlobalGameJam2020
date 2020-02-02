@@ -13,7 +13,11 @@ public class Machine : MonoBehaviour {
     private Transform[] currentPieces;
     public List<Transform> anchorPoints;
 
-    void Start() {
+    public Team team;
+
+    public void Init(Team t) {
+        team = t;
+
         for(int i = 0; i < missingPieces.Count; i++) {
             Image icon = Instantiate(iconPrefab, canvas).GetComponent<Image>();
             icon.sprite = missingPieces[i].image;
@@ -33,7 +37,11 @@ public class Machine : MonoBehaviour {
         currentPieces = new Transform[missingPieces.Count];
     }
 
-    public bool Use(Item item) {
+    public bool Use(Team t, Item item) {
+        if(t != team) {
+            return false;
+        }
+
         for(int i = 0; i < missingPieces.Count; i++) {
             if(missingPieces[i].scrapType == item.scrapType) {
                 item.transform.parent = transform;

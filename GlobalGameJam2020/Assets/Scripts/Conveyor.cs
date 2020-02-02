@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Conveyor : MonoBehaviour {
-    public Transform belt;
+    public Team team;
 
     public GameObject[] machinePrefabs;
     public List<Machine> machines;
@@ -16,6 +16,10 @@ public class Conveyor : MonoBehaviour {
     public float spawnFrequency;
     public float cutoff;
 
+    void Start() {
+        machines.ForEach(m => m.Init(team));
+    }
+
     void Update() {
         if(moving) {
             Vector3 delta = transform.forward * moveSpeed * Time.deltaTime;
@@ -26,6 +30,7 @@ public class Conveyor : MonoBehaviour {
                 if(machines[i].transform.position.z > cutoff) {
                     if(machines[i].IsComplete()) {
                         Debug.Log("Score");
+                        GameManager.instance.AddScore(team);
                     } else {
                         Debug.Log("Fail");
                     }
@@ -49,6 +54,7 @@ public class Conveyor : MonoBehaviour {
 
     private void SpawnMachine() {
         Machine machine = Instantiate(machinePrefabs[Random.Range(0, machinePrefabs.Length)], transform.position, transform.rotation, transform).GetComponent<Machine>();
+        machine.Init(team);
         machines.Add(machine);
     }
 }

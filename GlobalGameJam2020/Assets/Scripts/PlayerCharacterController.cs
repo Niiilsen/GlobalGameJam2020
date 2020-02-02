@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacterController : MonoBehaviour {
+    public Team team;
     public float moveSpeed = 40f;
     public float moveSpeedWithItem = 30f;
 
@@ -42,13 +43,9 @@ public class PlayerCharacterController : MonoBehaviour {
         inputDisabled = true;
 
         moveHash = Animator.StringToHash("MoveSpeed");
-
-        //Temp until gamemanager
-        Init();
     }
 
-    public void Init(/*Material mat*/) {
-        //visual.material = mat;
+    public void Init() {
         inputDisabled = false;
     }
 
@@ -136,14 +133,14 @@ public class PlayerCharacterController : MonoBehaviour {
                 ConveyorLever lever = GetClosestLever();
 
                 if(lever) {
-                    lever.Trigger();
+                    lever.Trigger(team);
                 }
             }
         } else {
             Machine machine = GetClosestMachine();
 
             if(machine) {
-                if(machine.Use(currentItem)) {
+                if(machine.Use(team, currentItem)) {
                     currentItem = null;
                 }
             } else {
@@ -160,20 +157,6 @@ public class PlayerCharacterController : MonoBehaviour {
 
         currentItem.Thrown(rb.velocity + (tr.forward + tr.up * 0.5f).normalized * throwForce);
         currentItem = null;
-    }
-
-    public void UseItem() {
-        if(currentItem == null) {
-            return;
-        }
-
-        Machine machine = GetClosestMachine();
-
-        if(machine) {
-            if(machine.Use(currentItem)) {
-                currentItem = null;
-            }
-        }
     }
 
     private Item GetClosestItem() {
