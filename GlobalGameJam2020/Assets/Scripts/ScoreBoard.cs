@@ -13,7 +13,10 @@ public class ScoreBoard : MonoBehaviour
     {
         scoreText.SetText(score.ToString());
         if (score > lastScore)
+        {
+            Debug.Log("Play Sound");
             FMODUnity.RuntimeManager.PlayOneShot(scoreIncreaseSnd, transform.position);
+        }
         lastScore = score;
 
     }

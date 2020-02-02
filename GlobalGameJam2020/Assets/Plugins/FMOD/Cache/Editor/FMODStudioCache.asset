@@ -89,7 +89,7 @@ MonoBehaviour:
   lastModified: 637162387953414298
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8488607760239413684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   lastModified: 637162387953032684
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7502349119911538944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ MonoBehaviour:
   Path: event:/ConveyorBelt
   guid: 5bbee2fe9168024c934ce08ab694d8c8
   Banks:
-  - {fileID: -7691225905958462874}
+  - {fileID: 3975357244151339804}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   Path: event:/powerSound
   guid: 7eb919c34a1d8845b0ccf2662fd586a4
   Banks:
-  - {fileID: -7691225905958462874}
+  - {fileID: 3975357244151339804}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -371,7 +371,7 @@ MonoBehaviour:
   Path: event:/Music
   guid: fe10bb6503a96942a071c06acd27008a
   Banks:
-  - {fileID: -8596249849679144475}
+  - {fileID: 1162765180671017119}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -538,7 +538,7 @@ MonoBehaviour:
   Path: event:/energy
   guid: e0a02b6f412ebf43aee552dd728b2fc8
   Banks:
-  - {fileID: -7691225905958462874}
+  - {fileID: 3975357244151339804}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -579,7 +579,7 @@ MonoBehaviour:
   Path: event:/SucessSounds
   guid: e6ef23778146b043b18de4a11f9ccbbd
   Banks:
-  - {fileID: -7691225905958462874}
+  - {fileID: 3975357244151339804}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -605,6 +605,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-562230833150731705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/GGJ2020/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637162407463443241
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-385434933336010110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,9 +673,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 7681390129333068907}
-  - {fileID: 1160097938918492042}
-  - {fileID: -8596249849679144475}
-  - {fileID: -7691225905958462874}
+  - {fileID: -562230833150731705}
+  - {fileID: 1162765180671017119}
+  - {fileID: 3975357244151339804}
   EditorEvents:
   - {fileID: 6692098310954951498}
   - {fileID: -6031695941987885047}
@@ -670,10 +688,10 @@ MonoBehaviour:
   - {fileID: 5062250129945483054}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1160097938918492042}
+  - {fileID: -562230833150731705}
   StringsBanks:
   - {fileID: 7681390129333068907}
-  stringsBankWriteTime: 637162387952585129
+  stringsBankWriteTime: 637162407463523125
   cacheVersion: 3
 --- !u!114 &750341048621553079
 MonoBehaviour:
@@ -726,6 +744,24 @@ MonoBehaviour:
   Path: Assets/FMOD/GGJ2020/Build/Desktop/Master Bank.bank
   SubDir: 
   lastModified: 637162387952515316
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &1162765180671017119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/GGJ2020/Build/Desktop/Music.bank
+  SubDir: 
+  lastModified: 637162407464453413
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -927,6 +963,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3975357244151339804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/GGJ2020/Build/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637162407463953994
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3994358157893245668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,13 +996,13 @@ MonoBehaviour:
   Path: event:/ScoreIncrease
   guid: 3049ef49d9448440aa077d462997418c
   Banks:
-  - {fileID: -7691225905958462874}
+  - {fileID: 3975357244151339804}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 451
 --- !u!114 &4638344674250278495
 MonoBehaviour:
@@ -1037,7 +1091,7 @@ MonoBehaviour:
   Path: event:/Running
   guid: 2fa2c44f8fa65f488885c40d319caad8
   Banks:
-  - {fileID: -7691225905958462874}
+  - {fileID: 3975357244151339804}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1132,7 +1186,7 @@ MonoBehaviour:
   Path: event:/LevelPull
   guid: 303db077c06623438f0740612c292a12
   Banks:
-  - {fileID: -7691225905958462874}
+  - {fileID: 3975357244151339804}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1155,7 +1209,7 @@ MonoBehaviour:
   Path: event:/portalpushoutsound
   guid: 516e44cc2200ca48800230d58b9640b6
   Banks:
-  - {fileID: -7691225905958462874}
+  - {fileID: 3975357244151339804}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1267,7 +1321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD/GGJ2020/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637162387952585129
+  lastModified: 637162407463523125
   LoadResult: 0
   FileSizes:
   - Name: Desktop

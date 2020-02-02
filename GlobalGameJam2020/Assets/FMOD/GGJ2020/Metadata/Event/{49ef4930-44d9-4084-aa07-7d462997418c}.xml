@@ -5,7 +5,7 @@
             <value>ScoreIncrease</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>0</value>
         </property>
         <relationship name="folder">
             <destination>{841fc6fd-2879-405f-bca8-89f348a2e6d9}</destination>
@@ -119,7 +119,6 @@
     <object class="MixerBusEffectChain" id="{794b16d2-f608-4fa5-bfa6-ebf468b54953}">
         <relationship name="effects">
             <destination>{30cb83de-7c89-402a-b704-e988abd3ce13}</destination>
-            <destination>{5e5d7cd1-a58b-4c8a-9783-0523c62b9bfe}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{43e38da1-a39a-4d4c-9fcf-2772ff2bb745}"/>
@@ -139,6 +138,5 @@
     </object>
     <object class="MixerBusPanner" id="{641b05f3-0a9a-458f-b54b-af69e7e0cd03}"/>
     <object class="MixerBusFader" id="{30cb83de-7c89-402a-b704-e988abd3ce13}"/>
-    <object class="SpatialiserEffect" id="{5e5d7cd1-a58b-4c8a-9783-0523c62b9bfe}"/>
     <object class="MixerBusFader" id="{a78a0ada-2290-40a8-88fa-2fafce9587b7}"/>
 </objects>

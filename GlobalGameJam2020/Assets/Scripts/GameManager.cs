@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public enum Team { Yellow, Red }
 
@@ -18,13 +19,15 @@ public class GameManager : MonoBehaviour {
     public float spread = 15f;
     public float spawnForce = 10f;
 
+    public int scoreIncrease = 100;
+
     private float timer;
 
-    public Text[] scoreText;
-    private float[] score;
+    public ScoreBoard[] scoreText;
+    private int[] score;
     private bool roundPlaying;
 
-    public Text counter;
+    public TMP_Text counter;
 
     private float gameTimer = 0;
 
@@ -43,7 +46,7 @@ public class GameManager : MonoBehaviour {
         players = GameObject.FindObjectsOfType<PlayerCharacterController>();
         conveyors = GameObject.FindObjectsOfType<Conveyor>();
 
-        score = new float[2];
+        score = new int[2];
         timer = 4f;
 
         gameTimer = roundTime;
@@ -130,8 +133,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void AddScore(Team team) {
-        score[(int)team]++;
-        scoreText[(int)team].text = score[(int)team].ToString();
+        score[(int)team] += scoreIncrease;
+        scoreText[(int)team].SetScore(score[(int)team]);
 
     }
 }
