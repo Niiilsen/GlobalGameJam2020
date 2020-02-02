@@ -14,7 +14,7 @@ public class Conveyor : MonoBehaviour {
     private float distance;
 
     public float spawnFrequency = 8f;
-    public float spawnFrequencyIncrease = 0.4f;
+    public float spawnFrequencyIncrease = 0.04f;
     public float cutoff;
 
     public ConveyorBelt conveyorBelt;
@@ -61,6 +61,10 @@ public class Conveyor : MonoBehaviour {
         Machine machine = Instantiate(machinePrefabs[Random.Range(0, machinePrefabs.Length)], transform.position, transform.rotation, transform).GetComponent<Machine>();
         machine.Init(team);
         machines.Add(machine);
+    }
+
+    public void StartRound() {
+        moving = true;
     }
 
     public void EndRound() {

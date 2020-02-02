@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
     public float spawnTime = 5f;
     public int spawnQty = 4;
     public float spread = 15f;
-    public float spawnForce = 10f;
+    public Vector2 spawnForceMinMax = new Vector2(7, 14);
 
     public int scoreIncrease = 100;
 
@@ -85,6 +85,10 @@ public class GameManager : MonoBehaviour {
         for(int i = 0; i < players.Length; i++) {
             players[i].Init();
         }
+
+        foreach(Conveyor c in conveyors) {
+            c.StartRound();
+        }
     }
 
     private void EndRound() {
@@ -125,7 +129,7 @@ public class GameManager : MonoBehaviour {
             //int spawnIndex = Random.Range(0, scraps.Length);
 
             Item obj = Instantiate(scraps[spawnIndex], spawnPoint.position + offset, spawnPoint.rotation).GetComponent<Item>();
-            obj.GetComponent<Rigidbody>().AddForce(Utils.GetPointOnUnitSphereCap(spawnPoint.forward, spread) * spawnForce, ForceMode.Impulse);
+            obj.GetComponent<Rigidbody>().AddForce(Utils.GetPointOnUnitSphereCap(spawnPoint.forward, spread) * Random.Range(spawnForceMinMax.x, spawnForceMinMax.y), ForceMode.Impulse);
             obj.Init();
 
             spawnIndex = (spawnIndex + 1) % scraps.Length;

@@ -712,13 +712,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175480742}
-  m_LocalRotation: {x: -0, y: 0.9965021, z: -0, w: -0.0835683}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1.04, z: 6.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1490615232}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 189.58699, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &177391765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,8 +2164,8 @@ MonoBehaviour:
   roundTime: 60
   spawnTime: 5
   spawnQty: 4
-  spread: 15
-  spawnForce: 10
+  spread: 20
+  spawnForceMinMax: {x: 7, y: 14}
   scoreText:
   - {fileID: 1183661793}
   - {fileID: 1468994940}
