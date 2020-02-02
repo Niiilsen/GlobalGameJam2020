@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 9140078842100461565}
   moveSpeed: 2
   spawnFrequency: 8
-  spawnFrequencyIncrease: 0.4
+  spawnFrequencyIncrease: 0.04
   cutoff: 5
   conveyorBelt: {fileID: 0}
 --- !u!1 &9140078842347427179

@@ -34,6 +34,8 @@ public class PlayerCharacterController : MonoBehaviour {
     public float dashForce = 10f;
     public float dashFalloff = 2f;
 
+    [SerializeField, FMODUnity.EventRef] private string dashSnd;
+
     private bool inputDisabled;
 
     void Awake() {
@@ -67,7 +69,7 @@ public class PlayerCharacterController : MonoBehaviour {
         }
 
         if(currentItem) {
-            Vector3 newVelocity = moveVector * 10f * moveSpeedWithItem * Time.fixedDeltaTime;
+            Vector3 newVelocity = moveVector * 10f * moveSpeedWithItem * Time.fixedDeltaTime + dashVector;
             newVelocity.y = rb.velocity.y;
             rb.velocity = newVelocity;
 
@@ -115,9 +117,13 @@ public class PlayerCharacterController : MonoBehaviour {
             return;
         }
 
-        if(currentItem || dashVector.sqrMagnitude > 0.1f) {
+        if(/*currentItem ||*/ dashVector.sqrMagnitude > 0.1f) {
             return;
         }
+
+        FMODUnity.RuntimeManager.PlayOneShot(dashSnd, transform.position);
+
+        Debug.Log("DASHING");
         dashVector = dir * dashForce;
     }
 

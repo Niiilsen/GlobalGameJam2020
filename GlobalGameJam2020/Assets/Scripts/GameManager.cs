@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public enum Team { Yellow, Red }
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
     public static GameManager instance;
 
     public Transform spawnPoint;
@@ -33,16 +35,27 @@ public class GameManager : MonoBehaviour {
 
     private PlayerCharacterController[] players;
     private Conveyor[] conveyors;
+    [SerializeField] private ScreenShaker screenShake;
 
-    private void Awake() {
-        if(instance != null) {
+    public Animator portalAnim;
+
+    [SerializeField, FMODUnity.EventRef] string spitSnd;
+    private bool anticipating = false;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
             Destroy(gameObject);
-        } else {
+        }
+        else
+        {
             instance = this;
         }
     }
 
-    void Start() {
+    void Start()
+    {
         players = GameObject.FindObjectsOfType<PlayerCharacterController>();
         conveyors = GameObject.FindObjectsOfType<Conveyor>();
 
@@ -55,11 +68,19 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(GameLoop());
     }
 
-    void Update() {
-        if(roundPlaying) {
+    void Update()
+    {
+        if (roundPlaying)
+        {
             timer += Time.deltaTime;
+            if (!anticipating && spawnTime - timer < 1)
+            {
+                AnticipatePortal();
+            }
+            if (timer >= spawnTime)
+            {
 
-            if(timer >= spawnTime) {
+
                 SpawnScrap();
                 timer = 0f;
             }
@@ -69,7 +90,14 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    private IEnumerator GameLoop() {
+    private void AnticipatePortal()
+    {
+        portalAnim.SetTrigger("Anticipate");
+        anticipating = true;
+    }
+
+    private IEnumerator GameLoop()
+    {
         yield return new WaitForSeconds(3f);
         Debug.Log("Round start");
         StartRound();
@@ -80,63 +108,85 @@ public class GameManager : MonoBehaviour {
         EndRound();
     }
 
-    private void StartRound() {
+    private void StartRound()
+    {
         roundPlaying = true;
-        for(int i = 0; i < players.Length; i++) {
+        for (int i = 0; i < players.Length; i++)
+        {
             players[i].Init();
         }
 
-        foreach(Conveyor c in conveyors) {
+        foreach (Conveyor c in conveyors)
+        {
             c.StartRound();
         }
     }
 
-    private void EndRound() {
+    private void EndRound()
+    {
         int winners = -1;
-        if(score[(int)Team.Yellow] > score[(int)Team.Red]) {
+        if (score[(int)Team.Yellow] > score[(int)Team.Red])
+        {
             winners = (int)Team.Yellow;
-        } else if (score[(int)Team.Red] > score[(int)Team.Yellow]) {
+        }
+        else if (score[(int)Team.Red] > score[(int)Team.Yellow])
+        {
             winners = (int)Team.Red;
         }
 
         roundPlaying = false;
-        foreach(PlayerCharacterController player in players) {
+        foreach (PlayerCharacterController player in players)
+        {
             player.Disable();
             player.GetComponent<PlayerInput>().EndGameControls();
 
-            if(winners == -1) {
+            if (winners == -1)
+            {
                 player.PlayAnim("Draw");
-            } else if(player.team == (Team)winners) {
+            }
+            else if (player.team == (Team)winners)
+            {
                 player.PlayAnim("Victory");
-            } else if(player.team != (Team)winners) {
+            }
+            else if (player.team != (Team)winners)
+            {
                 player.PlayAnim("Defeat");
-             }
+            }
         }
 
-        foreach(Conveyor c in conveyors) {
+        foreach (Conveyor c in conveyors)
+        {
             c.EndRound();
         }
     }
 
-    private void SpawnScrap() {
-        if(scraps.Length == 0) {
+    private void SpawnScrap()
+    {
+        if (scraps.Length == 0)
+        {
             return;
         }
 
+        FMODUnity.RuntimeManager.PlayOneShot(spitSnd, transform.position);
+        screenShake.AddTrauma(1);
+        anticipating = false;
+
         int spawnIndex = 0;
-        for(int i = 0; i < spawnQty; i++) {
-            Vector3 offset = Random.onUnitSphere * 0.5f;
+        for (int i = 0; i < spawnQty; i++)
+        {
+            Vector3 offset = UnityEngine.Random.onUnitSphere * 0.5f;
             //int spawnIndex = Random.Range(0, scraps.Length);
 
             Item obj = Instantiate(scraps[spawnIndex], spawnPoint.position + offset, spawnPoint.rotation).GetComponent<Item>();
-            obj.GetComponent<Rigidbody>().AddForce(Utils.GetPointOnUnitSphereCap(spawnPoint.forward, spread) * Random.Range(spawnForceMinMax.x, spawnForceMinMax.y), ForceMode.Impulse);
+            obj.GetComponent<Rigidbody>().AddForce(Utils.GetPointOnUnitSphereCap(spawnPoint.forward, spread) * UnityEngine.Random.Range(spawnForceMinMax.x, spawnForceMinMax.y), ForceMode.Impulse);
             obj.Init();
 
             spawnIndex = (spawnIndex + 1) % scraps.Length;
         }
     }
 
-    public void AddScore(Team team) {
+    public void AddScore(Team team)
+    {
         score[(int)team] += scoreIncrease;
         scoreText[(int)team].SetScore(score[(int)team]);
 

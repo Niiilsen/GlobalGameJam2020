@@ -1595,6 +1595,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1304349907}
     m_Modifications:
+    - target: {fileID: 276658503208147613, guid: f0a8fdf24b8da264980d8677dd803bf2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.2210283
+      objectReference: {fileID: 0}
+    - target: {fileID: 276658503208147613, guid: f0a8fdf24b8da264980d8677dd803bf2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.2210283
+      objectReference: {fileID: 0}
+    - target: {fileID: 276658503208147613, guid: f0a8fdf24b8da264980d8677dd803bf2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.2210283
+      objectReference: {fileID: 0}
     - target: {fileID: 1531141017450882421, guid: f0a8fdf24b8da264980d8677dd803bf2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1659,6 +1674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6.2665005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531141017450882421, guid: f0a8fdf24b8da264980d8677dd803bf2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.2665
       objectReference: {fileID: 0}
     - target: {fileID: 1538989036309704177, guid: f0a8fdf24b8da264980d8677dd803bf2,
         type: 3}
@@ -2237,7 +2257,7 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
-        _actionId: 2
+        _actionId: 4
         _elementType: 1
         _elementIdentifierId: 7
         _axisRange: 0
@@ -2251,6 +2271,28 @@ MonoBehaviour:
         _actionId: 4
         _elementType: 1
         _elementIdentifierId: 4
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 2
+        _elementType: 1
+        _elementIdentifierId: 13
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 2
+        _elementType: 1
+        _elementIdentifierId: 11
         _axisRange: 0
         _invert: 0
         _axisContribution: 0
@@ -3198,6 +3240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9140078840967991820, guid: 66ff8bbd9489cf448940568a7da963e7,
         type: 3}
+      propertyPath: machinePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140078840967991820, guid: 66ff8bbd9489cf448940568a7da963e7,
+        type: 3}
       propertyPath: conveyorBelt
       value: 
       objectReference: {fileID: 1235655011}
@@ -3206,6 +3253,17 @@ PrefabInstance:
       propertyPath: team
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9140078840967991820, guid: 66ff8bbd9489cf448940568a7da963e7,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140078840967991820, guid: 66ff8bbd9489cf448940568a7da963e7,
+        type: 3}
+      propertyPath: machinePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8985092608646480178, guid: 4fd7164d27cbf9a4ea3822b19c0d8314,
+        type: 3}
     - target: {fileID: 9140078840967991821, guid: 66ff8bbd9489cf448940568a7da963e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4218,6 +4276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dashFalloff
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423418717732489513, guid: 672f65a5bda1a7d42b58ba21622d7218,
+        type: 3}
+      propertyPath: team
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7423418717732489515, guid: 672f65a5bda1a7d42b58ba21622d7218,
         type: 3}
@@ -5770,6 +5833,54 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 1768108909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &690484988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1787012067811022624, guid: f0a8fdf24b8da264980d8677dd803bf2,
+    type: 3}
+  m_PrefabInstance: {fileID: 14104432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &690484989
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690484988}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90c9ba2bf2271e74fac2bdcc2f4ee4fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &690484990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690484988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/portalAmbience
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &690484991 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1531141017450882421, guid: f0a8fdf24b8da264980d8677dd803bf2,
@@ -6970,6 +7081,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194231}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7120,6 +7232,27 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decddb73359a6ac4792634bdd770509d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxYaw: 20
+  maxPitch: 10
+  maxRoll: 5
+  maxOfs: 2
+  useRotationalShake: 1
+  usePositionalShake: 1
+  speed: 20
+  gravity: 0.25
+  shakeStrength: 15
 --- !u!23 &978697714 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5472964667148818058, guid: 2b67311543f9c0a4fa0a888fdac5ed8a,
@@ -7953,7 +8086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   belt: {fileID: 2100000, guid: 6439e4cda37f5ed4cabc82e7cf32da42, type: 2}
-  beltSpeed: 0.044
+  beltSpeed: 0.11
   lerpSpeed: 1
   conveyorBeltEvent: event:/ConveyorBelt
 --- !u!114 &1029334932
@@ -8589,6 +8722,11 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpeedWithItem
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423418717732489513, guid: 672f65a5bda1a7d42b58ba21622d7218,
+        type: 3}
+      propertyPath: team
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7423418717732489515, guid: 672f65a5bda1a7d42b58ba21622d7218,
         type: 3}
@@ -10211,7 +10349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   belt: {fileID: 2100000, guid: 10edf79f86c73074891fa76bb734889d, type: 2}
-  beltSpeed: 0.044
+  beltSpeed: 0.11
   lerpSpeed: 1
   conveyorBeltEvent: event:/ConveyorBelt
 --- !u!114 &1235655012
@@ -11526,12 +11664,16 @@ MonoBehaviour:
   roundTime: 60
   spawnTime: 5
   spawnQty: 4
-  spread: 15
-  spawnForce: 10
+  spread: 40
+  spawnForceMinMax: {x: 2, y: 16}
+  scoreIncrease: 100
   scoreText:
   - {fileID: 6735199760687687464}
   - {fileID: 1844578113}
   counter: {fileID: 419485480}
+  screenShake: {fileID: 963194231}
+  portalAnim: {fileID: 690484989}
+  spitSnd: event:/portalpushoutsound
 --- !u!4 &1490615232
 Transform:
   m_ObjectHideFlags: 0
@@ -21817,6 +21959,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PointsSign
       objectReference: {fileID: 0}
+    - target: {fileID: 8457000631966983272, guid: 87cc27aee12170f4c9b764bd3e9aab2e,
+        type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457000631966983272, guid: 87cc27aee12170f4c9b764bd3e9aab2e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87cc27aee12170f4c9b764bd3e9aab2e, type: 3}
 --- !u!33 &3974202783357842708
@@ -31141,6 +31293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9140078840967991820, guid: 66ff8bbd9489cf448940568a7da963e7,
         type: 3}
+      propertyPath: machinePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140078840967991820, guid: 66ff8bbd9489cf448940568a7da963e7,
+        type: 3}
       propertyPath: conveyorBelt
       value: 
       objectReference: {fileID: 1029334931}
@@ -31149,6 +31306,17 @@ PrefabInstance:
       propertyPath: cutoff
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9140078840967991820, guid: 66ff8bbd9489cf448940568a7da963e7,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140078840967991820, guid: 66ff8bbd9489cf448940568a7da963e7,
+        type: 3}
+      propertyPath: machinePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8985092608646480178, guid: 4fd7164d27cbf9a4ea3822b19c0d8314,
+        type: 3}
     - target: {fileID: 9140078840967991821, guid: 66ff8bbd9489cf448940568a7da963e7,
         type: 3}
       propertyPath: m_LocalPosition.x

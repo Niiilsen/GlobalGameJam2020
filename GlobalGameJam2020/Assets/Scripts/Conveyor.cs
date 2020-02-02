@@ -65,9 +65,11 @@ public class Conveyor : MonoBehaviour {
 
     public void StartRound() {
         moving = true;
+        conveyorBelt.ToggleBelt(moving);
     }
 
     public void EndRound() {
         moving = false;
+        conveyorBelt.ToggleBelt(moving);
     }
 }

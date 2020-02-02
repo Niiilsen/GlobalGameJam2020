@@ -13,6 +13,11 @@ public class Machine : MonoBehaviour {
     private Transform[] currentPieces;
     public List<Transform> anchorPoints;
 
+    public Color BlueColor;
+    public Color GreenColor;
+    public Color YellowColor;
+    public Color RedColor;
+
     public Team team;
 
     public void Init(Team t) {
@@ -24,13 +29,13 @@ public class Machine : MonoBehaviour {
 
             //TEMP
             if(missingPieces[i].scrapType == ScrapType.Red) {
-                icon.color = Color.red;
+                icon.color = RedColor;
             }else if(missingPieces[i].scrapType == ScrapType.Blue) {
-                icon.color = Color.blue;
+                icon.color = BlueColor;
             } else if(missingPieces[i].scrapType == ScrapType.Green) {
-                icon.color = Color.green;
+                icon.color = GreenColor;
             } else if(missingPieces[i].scrapType == ScrapType.Yellow) {
-                icon.color = Color.yellow;
+                icon.color = YellowColor;
             }
         }
 
